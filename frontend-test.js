@@ -26,7 +26,6 @@ class Api {
    * @return		{string}
    */
   
-  // Вот эта функция написана
   get_api_path(object, template) {
     let result = template;
     let neededKeys = template.match(/\%[a-z]*\%/gi);
@@ -37,7 +36,7 @@ class Api {
     return result;
   }
 }
-// Это допом, нужна ли она?
+
 let deleteProc = (str) => {
   return str.replace(/%/gi, "");
 };

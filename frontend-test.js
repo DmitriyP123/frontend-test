@@ -30,8 +30,7 @@ class Api {
     let result = template;
     let needed_keys = template.match(/\%[a-z]*\%/gi);
     needed_keys.forEach((el) => {
-      result = result.replace(el, `${object[delete_proc(el)]}`);
-      result = result.replace(/\s/g, '%20')
+      result = result.replace(el, encodeURIComponent(`${object[delete_proc(el)]}`));
     });
     return result;
   }

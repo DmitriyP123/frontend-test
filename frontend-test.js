@@ -28,16 +28,16 @@ class Api {
   
   get_api_path(object, template) {
     let result = template;
-    let neededKeys = template.match(/\%[a-z]*\%/gi);
-    neededKeys.forEach((el) => {
-      result = result.replace(el, `${object[deleteProc(el)]}`);
+    let needed_keys = template.match(/\%[a-z]*\%/gi);
+    needed_keys.forEach((el) => {
+      result = result.replace(el, `${object[delete_proc(el)]}`);
       result = result.replace(/\s/g, '%20')
     });
     return result;
   }
 }
 
-let deleteProc = (str) => {
+let delete_proc = (str) => {
   return str.replace(/%/gi, "");
 };
 
